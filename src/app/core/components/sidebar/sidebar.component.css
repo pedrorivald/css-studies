@@ -1,0 +1,100 @@
+#check {
+  display: none;
+}
+
+#check:checked ~ .sidebar {
+  right: 20px;
+}
+
+.button {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
+  height: 37px;
+  width: 37px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 37px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.button:hover {
+  box-shadow: inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
+  color: var(--color-secondary);
+}
+
+.bars {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.cancel {
+  position: absolute;
+  top: 20px;
+
+}
+
+.sidebar {
+  position: absolute;
+  top: 3vh;
+  right: -100%;
+  width: 140px;
+  height: 94vh;
+  background: var(--color-bg);
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
+    inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
+  transition: all 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar .title {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px 0px 10px;
+}
+
+.sidebar ul a {
+  position: relative;
+  display: block;
+  text-align: center;
+  color: var(--color-text);
+  text-decoration: none;
+  margin-top: 12px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
+  transition: all 0.2s ease;
+}
+
+.sidebar ul a i {
+  text-shadow: 1px 1px 1px var(--color-text);
+}
+
+.sidebar ul a:hover:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  box-shadow: inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
+}
+
+.sidebar ul a:hover i {
+  color: var(--color-secondary);
+}

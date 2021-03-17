@@ -189,10 +189,26 @@
 }
 
 .code .copy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   outline: none;
   border: none;
   margin-top: 14px;
   padding: 10px 20px 10px 20px;
   border-radius: 20px;
   font-size: 1.5rem;
+}
+
+.code .copied {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+  margin-left: 120px;
+  color: #3ec23e;
+  transition: all 0.3s;
 }

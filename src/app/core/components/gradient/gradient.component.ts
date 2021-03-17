@@ -25,6 +25,8 @@ export class GradientComponent implements OnInit {
 
   copy(text: string) {
     this.clipboardService.copy(text);
+    document.getElementById('copied').style.opacity = '1';
+    setTimeout(() => { document.getElementById('copied').style.opacity = '0'; }, 1500);
   }
 
   setColors() {

@@ -1,11 +1,18 @@
 .logo {
-  position: absolute;
-  top: 10px;
-  left: 15px;
+  width: fit-content;
+  transform: translate(-15px, -30px);
+  padding: 12px;
+  background: var(--color-bg);
+  border-radius: 20px;
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
+    inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
+}
+
+.logo .text {
   font-weight: bold;
 	font-size: 3rem;
 	background: var(--color-white);
 	background-clip: text;
 	color: transparent;
-	text-shadow: 1px 1px 1px var(--color-shadow);
+	text-shadow: 1px 1px 1px var(--color-secondary);
 }

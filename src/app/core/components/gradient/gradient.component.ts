@@ -11,6 +11,8 @@ export class GradientComponent implements OnInit {
   code: string = '';
   codeHTML: string = '';
   orientation: string = 'bottom';
+  range1: number = 0;
+  range2: number = 100;
 
   public ctrlColors = [
     { control: 'First', color: '#72e3ea' },
@@ -32,22 +34,22 @@ export class GradientComponent implements OnInit {
   setColors() {
     document.getElementById(
       'result'
-    ).style.background = `linear-gradient(to ${this.orientation}, ${this.ctrlColors[0].color} 0%, ${this.ctrlColors[1].color} 100%)`;
+    ).style.background = `linear-gradient(to ${this.orientation}, ${this.ctrlColors[0].color} ${this.range1}%, ${this.ctrlColors[1].color} ${this.range2}%)`;
   }
 
   setCode() {
     this.code = `background:
     linear-gradient
       (to ${this.orientation},
-      ${this.ctrlColors[0].color} 0%,
-      ${this.ctrlColors[1].color} 100%);
+      ${this.ctrlColors[0].color} ${this.range1}%,
+      ${this.ctrlColors[1].color} ${this.range2}%);
   `;
     this.codeHTML = `
       <span class="code-bg">background:</span>
       <span class="code-gradient">linear-gradient</span>
         (to ${this.orientation},
-        <span class="code-color" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span> 0%,
-        <span class="code-color" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span> 100%);
+        <span class="code-color" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span> ${this.range1}%,
+        <span class="code-color" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span> ${this.range2}%);
     `;
     document.getElementById('code').innerHTML = this.codeHTML;
   }

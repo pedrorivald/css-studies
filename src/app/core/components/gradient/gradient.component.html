@@ -3,11 +3,11 @@
     <div class="color">
       <div *ngFor="let ctrl of ctrlColors; let i = index">
         Cor {{ i + 1 }}
-        <input type="color" [(ngModel)]="ctrl.color" name="color_{{ i }}" />
+        <input class="up" type="color" [(ngModel)]="ctrl.color" name="color_{{ i }}" />
         {{ setColors() }} {{ setCode() }}
       </div>
     </div>
-    <div class="color-add"><i class="fas fa-plus"></i></div>
+    <div class="color-add down"><i class="fas fa-plus"></i></div>
   </div>
   <div class="gradient-result">
     <div class="result" id="result"></div>
@@ -19,21 +19,21 @@
   </div>
   <div class="gradient-orientation">
     <div class="arrows">
-      <div class="arrow top-left"><i class="fas fa-arrow-up"></i></div>
-      <div class="arrow top"><i class="fas fa-arrow-up"></i></div>
-      <div class="arrow top-right"><i class="fas fa-arrow-up"></i></div>
-      <div class="arrow left"><i class="fas fa-arrow-up"></i></div>
-      <div class="arrow center"><i class="fas fa-arrow-up"></i></div>
-      <div class="arrow right"><i class="fas fa-arrow-up"></i></div>
-      <div class="arrow bottom-left"><i class="fas fa-arrow-up"></i></div>
-      <div class="arrow bottom"><i class="fas fa-arrow-up"></i></div>
-      <div class="arrow bottom-right"><i class="fas fa-arrow-up"></i></div>
+      <div class="arrow top-left down"><i class="fas fa-arrow-up"></i></div>
+      <div class="arrow top down"><i class="fas fa-arrow-up"></i></div>
+      <div class="arrow top-right down"><i class="fas fa-arrow-up"></i></div>
+      <div class="arrow left down"><i class="fas fa-arrow-up"></i></div>
+      <div class="arrow center down"><i class="fas fa-arrow-up"></i></div>
+      <div class="arrow right down"><i class="fas fa-arrow-up"></i></div>
+      <div class="arrow bottom-left down"><i class="fas fa-arrow-up"></i></div>
+      <div class="arrow bottom down"><i class="fas fa-arrow-up"></i></div>
+      <div class="arrow bottom-right down"><i class="fas fa-arrow-up"></i></div>
     </div>
 
     <div class="code">
       <p id="code"></p>
 
-      <button class="copy" (click)="copy(code)">
+      <button class="copy down" (click)="copy(code)">
         <i class="far fa-copy"></i>
       </button>
     </div>

@@ -28,3 +28,27 @@ body {
 .code-color {
   font-weight: 500;
 }
+
+.up {
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
+    inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.up:hover {
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
+  color: var(--color-shadow);
+}
+
+.down {
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.down:hover {
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
+    inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
+  color: var(--color-shadow);
+}

@@ -123,12 +123,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
-}
-
-.color-add i {
   font-size: 1.4rem;
-  color: var(--color-secondary);
 }
 
 .gradient-orientation {
@@ -159,12 +154,7 @@
   width: 40px;
   height: 40px;
   margin: 8px;
-  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
   border-radius: 50%;
-}
-
-.arrows .arrow i {
-  color: var(--color-secondary);
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -205,13 +195,4 @@
   padding: 10px 20px 10px 20px;
   border-radius: 20px;
   font-size: 1.5rem;
-  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
-  color: var(--color-secondary);
-  cursor: pointer;
-}
-
-.code .copy:hover {
-  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
-    inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
-  color: var(--color-shadow);
 }

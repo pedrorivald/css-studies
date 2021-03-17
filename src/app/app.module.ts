@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './core/components/sidebar/sidebar.component';
 import { LogoComponent } from './core/components/logo/logo.component';
+import { GradientComponent } from './core/components/gradient/gradient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    LogoComponent
+    LogoComponent,
+    GradientComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 .logo {
+  position: absolute;
   width: fit-content;
   transform: translate(-15px, -30px);
   padding: 12px;

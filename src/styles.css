@@ -32,13 +32,13 @@ body {
 .up {
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
     inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
-  color: var(--color-secondary);
+  color: var(--color-shadow);
   cursor: pointer;
 }
 
 .up:hover {
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
-  color: var(--color-shadow);
+  color: var(--color-secondary);
 }
 
 .down {

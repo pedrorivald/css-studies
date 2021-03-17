@@ -10,6 +10,7 @@ import { ClipboardService } from 'ngx-clipboard';
 export class GradientComponent implements OnInit {
   code: string = '';
   codeHTML: string = '';
+  orientation: string = 'bottom';
 
   public ctrlColors = [
     { control: 'First', color: '#72e3ea' },
@@ -29,20 +30,20 @@ export class GradientComponent implements OnInit {
   setColors() {
     document.getElementById(
       'result'
-    ).style.background = `linear-gradient(to bottom, ${this.ctrlColors[0].color} 0%, ${this.ctrlColors[1].color} 100%)`;
+    ).style.background = `linear-gradient(to ${this.orientation}, ${this.ctrlColors[0].color} 0%, ${this.ctrlColors[1].color} 100%)`;
   }
 
   setCode() {
     this.code = `background:
     linear-gradient
-      (to bottom,
+      (to ${this.orientation},
       ${this.ctrlColors[0].color} 0%,
       ${this.ctrlColors[1].color} 100%);
   `;
     this.codeHTML = `
       <span class="code-bg">background:</span>
       <span class="code-gradient">linear-gradient</span>
-        (to bottom,
+        (to ${this.orientation},
         <span class="code-color" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span> 0%,
         <span class="code-color" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span> 100%);
     `;

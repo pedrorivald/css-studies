@@ -1,8 +1,11 @@
 <div class="gradient">
   <div class="gradient-color">
     <div class="color">
-      <div>Cor 1 <input type="color" value="#3b21c0" class="gradient-color-input"></div>
-      <div>Cor 2 <input type="color" value="#8b5ecb" class="gradient-color-input"></div>
+      <div *ngFor="let ctrl of ctrlColors; let i = index">
+        Cor {{ i + 1 }}
+        <input type="color" [(ngModel)]="ctrl.color" name="color_{{ i }}" />
+        {{ setColors() }} {{ setCode() }}
+      </div>
     </div>
     <div class="color-add"><i class="fas fa-plus"></i></div>
   </div>
@@ -10,8 +13,8 @@
     <div class="result" id="result"></div>
 
     <div class="div-slider">
-      <input type="range" min="0" max="100" class="slider" id="" value="0">
-      <input type="range" min="0" max="100" class="slider" id="" value="100">
+      <input type="range" min="0" max="100" class="slider" id="" value="0" />
+      <input type="range" min="0" max="100" class="slider" id="" value="100" />
     </div>
   </div>
   <div class="gradient-orientation">
@@ -28,7 +31,11 @@
     </div>
 
     <div class="code">
-      <p>background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);</p>
+      <p id="code"></p>
+
+      <button class="copy" (click)="copy(code)">
+        <i class="far fa-copy"></i>
+      </button>
     </div>
   </div>
 </div>

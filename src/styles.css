@@ -19,3 +19,12 @@ body {
   overflow-x: hidden;
   background: var(--color-bg);
 }
+
+.code-bg {
+  font-weight: 500;
+  color: var(--color-secondary);
+}
+
+.code-color {
+  font-weight: 500;
+}

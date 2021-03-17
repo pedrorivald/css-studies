@@ -93,6 +93,7 @@
   align-items: center;
   margin-top: 12px;
   width: 100px;
+  color: #666;
 }
 
 .color div input {
@@ -178,12 +179,39 @@
 .bottom-right { transform: rotate(135deg); }
 
 .code {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
-  width: 65%;
+  width: 70%;
   padding: 15px;
   border-radius: 20px;
 }
 
 .code p {
+  padding: 10px;
+  border-radius: 15px;
   text-align: center;
+  color: #666;
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
+    inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
+}
+
+.code .copy {
+  outline: none;
+  border: none;
+  margin-top: 14px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.code .copy:hover {
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
+    inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
+  color: var(--color-shadow);
 }

@@ -14,3 +14,19 @@
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
     inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
 }
+
+@media screen and (max-width: 1000px) {
+  .content {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  .router-outlet {
+    width: 90vw;
+    height: auto;
+    margin-top: 170px;
+  }
+}

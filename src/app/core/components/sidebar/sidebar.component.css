@@ -33,7 +33,6 @@
 .cancel {
   position: absolute;
   top: 20px;
-
 }
 
 .sidebar {
@@ -97,4 +96,29 @@
 
 .sidebar ul a:hover i {
   color: var(--color-shadow);
+}
+
+@media screen and (max-width: 1000px) {
+  .sidebar {
+    flex-direction: row;
+    height: 100px;
+    width: 90vw;
+    position: absolute;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+
+  .sidebar ul {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+  }
+
+  .sidebar ul a {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 20px 10px 20px;
+  }
 }

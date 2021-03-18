@@ -17,3 +17,14 @@
 	color: transparent;
 	text-shadow: 1px 1px 1px var(--color-secondary);
 }
+
+@media screen and (max-width: 620px) {
+  .logo {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .logo .text {
+    font-size: 2rem;
+  }
+}

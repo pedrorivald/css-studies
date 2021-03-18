@@ -7,13 +7,15 @@ import { SidebarComponent } from './core/components/sidebar/sidebar.component';
 import { LogoComponent } from './core/components/logo/logo.component';
 import { GradientComponent } from './core/components/gradient/gradient.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import { BorderComponent } from './core/components/border/border.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     LogoComponent,
-    GradientComponent
+    GradientComponent,
+    BorderComponent
   ],
   imports: [
     FormsModule,

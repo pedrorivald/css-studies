@@ -1,88 +1,120 @@
 <div class="gradient">
   <div class="gradient-color">
     <div class="color">
-      <div *ngFor="let ctrl of ctrlColors; let i = index">
+      <div *ngFor="let ctrl of gradientService.ctrlColors; let i = index">
         Cor {{ i + 1 }}
-        <input
-          class="up"
-          type="color"
-          [(ngModel)]="ctrl.color"
-        />
-        {{ setColors() }} {{ setCode() }}
+        <input class="up" type="color" [(ngModel)]="ctrl.color" />
+        {{ gradientService.setColors() }} {{ gradientService.setCode() }}
       </div>
     </div>
-    <div class="color-add down"><i class="fas fa-plus"></i></div>
+    <div
+      *ngIf="gradientService.ctrlColors.length < 3; else Remove"
+      class="color-add down"
+      (click)="gradientService.addColor()"
+    >
+      <i class="fas fa-plus"></i>
+    </div>
+    <ng-template #Remove>
+      <div class="color-add down" (click)="gradientService.removeColor()">
+        <i class="fas fa-minus"></i>
+      </div>
+    </ng-template>
   </div>
   <div class="gradient-result">
     <div class="result" id="result"></div>
 
     <div class="div-slider">
-      <input type="range" [(ngModel)]="range1" min="0" max="100" class="slider" id="range1" />
-      <input type="range" [(ngModel)]="range2" min="0" max="100" class="slider" id="range2" />
+      <input
+        type="range"
+        [(ngModel)]="gradientService.range1"
+        min="0"
+        max="100"
+        class="slider"
+        id="range1"
+      />
+      <input
+        type="range"
+        [(ngModel)]="gradientService.range2"
+        min="0"
+        max="100"
+        class="slider"
+        id="range2"
+      />
+      <input
+        *ngIf="gradientService.ctrlColors.length == 3"
+        type="range"
+        [(ngModel)]="gradientService.range3"
+        min="0"
+        max="100"
+        class="slider"
+        id="range3"
+      />
     </div>
   </div>
   <div class="gradient-orientation">
     <div class="arrows">
       <div
         class="arrow top-left"
-        [ngClass]="orientation == 'top left' ? 'up' : 'down'"
-        (click)="orientation = 'top left'"
+        [ngClass]="gradientService.orientation == 'top left' ? 'up' : 'down'"
+        (click)="gradientService.orientation = 'top left'"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow top"
-        [ngClass]="orientation == 'top' ? 'up' : 'down'"
-        (click)="orientation = 'top'"
+        [ngClass]="gradientService.orientation == 'top' ? 'up' : 'down'"
+        (click)="gradientService.orientation = 'top'"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow top-right"
-        [ngClass]="orientation == 'top right' ? 'up' : 'down'"
-        (click)="orientation = 'top right'"
+        [ngClass]="gradientService.orientation == 'top right' ? 'up' : 'down'"
+        (click)="gradientService.orientation = 'top right'"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow left"
-        [ngClass]="orientation == 'left' ? 'up' : 'down'"
-        (click)="orientation = 'left'"
+        [ngClass]="gradientService.orientation == 'left' ? 'up' : 'down'"
+        (click)="gradientService.orientation = 'left'"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow center"
-        [ngClass]="orientation == 'top left' ? 'up' : 'down'"
-        (click)="orientation = 'top left'"
+        [ngClass]="gradientService.orientation == 'top left' ? 'up' : 'down'"
+        (click)="gradientService.orientation = 'top left'"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow right"
-        [ngClass]="orientation == 'right' ? 'up' : 'down'"
-        (click)="orientation = 'right'"
+        [ngClass]="gradientService.orientation == 'right' ? 'up' : 'down'"
+        (click)="gradientService.orientation = 'right'"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow bottom-left"
-        [ngClass]="orientation == 'bottom left' ? 'up' : 'down'"
-        (click)="orientation = 'bottom left'"
+        [ngClass]="gradientService.orientation == 'bottom left' ? 'up' : 'down'"
+        (click)="gradientService.orientation = 'bottom left'"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow bottom"
-        [ngClass]="orientation == 'bottom' ? 'up' : 'down'"
-        (click)="orientation = 'bottom'"
+        [ngClass]="gradientService.orientation == 'bottom' ? 'up' : 'down'"
+        (click)="gradientService.orientation = 'bottom'"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow bottom-right"
-        [ngClass]="orientation == 'bottom right' ? 'up' : 'down'"
-        (click)="orientation = 'bottom right'"
+        [ngClass]="
+          gradientService.orientation == 'bottom right' ? 'up' : 'down'
+        "
+        (click)="gradientService.orientation = 'bottom right'"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
@@ -91,7 +123,10 @@
     <div class="code">
       <p id="code"></p>
 
-      <button class="copy down" (click)="copy(code)">
+      <button
+        class="copy down"
+        (click)="gradientService.copy(gradientService.code)"
+      >
         <i class="far fa-copy"></i>
         <span class="copied up" id="copied">
           <i class="fas fa-check-circle"></i>

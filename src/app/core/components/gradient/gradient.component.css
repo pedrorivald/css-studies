@@ -265,3 +265,18 @@
     width: 80%;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .color div {
+    flex-direction: column;
+    padding: 12px 0px 12px 0px;
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .color {
+    padding: 5px;
+    box-shadow: none;
+  }
+}

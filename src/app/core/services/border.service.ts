@@ -1,4 +1,3 @@
-import { ClipboardService } from 'ngx-clipboard';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -24,18 +23,7 @@ export class BorderService {
   codeBorderRadius: string = '';
   borderDom: HTMLElement = document.getElementById('border-result');
 
-  constructor(private clipboardService: ClipboardService) {}
-
-  copy(border: string, borderRadius: string) {
-    this.clipboardService.copy(`
-    ${border}
-    ${borderRadius}
-    `);
-    document.getElementById('border-copied').style.opacity = '1';
-    setTimeout(() => {
-      document.getElementById('border-copied').style.opacity = '0';
-    }, 1500);
-  }
+  constructor() {}
 
   setBorderAll() {
     this.borderDom.style.border = `${this.borderWidth}px ${this.borderStyle} ${this.borderColor}`;

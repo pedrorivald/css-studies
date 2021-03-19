@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CopyService } from '../../services/copy.service';
 import { GradientService } from '../../services/gradient.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { GradientService } from '../../services/gradient.service';
 })
 export class GradientComponent implements OnInit {
 
-  constructor(public gradientService: GradientService) {}
+  constructor(public gradientService: GradientService, public copyService: CopyService) {}
 
   ngOnInit(): void {
     this.gradientService.setColors();

@@ -1,5 +1,6 @@
 import { BorderService } from './../../services/border.service';
 import { Component, OnInit } from '@angular/core';
+import { CopyService } from '../../services/copy.service';
 
 @Component({
   selector: 'app-border',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BorderComponent implements OnInit {
 
-  constructor(public borderService: BorderService) { }
+  constructor(public borderService: BorderService, public copyService: CopyService) { }
 
   ngOnInit(): void {
     this.borderService.borderDom = document.getElementById('border-result');

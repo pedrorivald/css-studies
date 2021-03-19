@@ -205,10 +205,11 @@
       <button
         class="copy down"
         (click)="
-          borderService.copy(
+          copyService.copy([
             this.borderService.codeBorder,
             this.borderService.codeBorderRadius
-          )
+          ]);
+          copyService.copyAnimation('border-copied');
         "
       >
         <i class="far fa-copy"></i>

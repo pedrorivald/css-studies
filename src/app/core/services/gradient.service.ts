@@ -18,13 +18,7 @@ export class GradientService {
     { control: 'Second', color: '#bd98bd' },
   ];
 
-  constructor(public clipboardService: ClipboardService) { }
-
-  copy(text: string) {
-    this.clipboardService.copy(text);
-    document.getElementById('copied').style.opacity = '1';
-    setTimeout(() => { document.getElementById('copied').style.opacity = '0'; }, 1500);
-  }
+  constructor() { }
 
   setColors() {
     if(this.ctrlColors.length < 3) {

@@ -125,7 +125,7 @@
 
       <button
         class="copy down"
-        (click)="gradientService.copy(gradientService.code)"
+        (click)="copyService.copy([gradientService.code]); copyService.copyAnimation('copied')"
       >
         <i class="far fa-copy"></i>
         <span class="copied up" id="copied">

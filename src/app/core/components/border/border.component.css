@@ -351,10 +351,16 @@
   }
 }
 
+@media screen and (max-width: 550px) {
+  .border {
+    grid-template-rows: 0.3fr 0.3fr 1fr 0.5fr 0.3fr 0.8fr 2fr;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .border {
     margin-top: 30px;
-    grid-template-rows: 0.3fr 0.3fr 0.5fr 0.5fr 0.3fr 0.8fr 1.5fr;
+    grid-template-rows: 0.3fr 0.3fr 0.5fr 0.5fr 0.3fr 0.8fr 2fr;
   }
   .border-position .arrows {
     width: 90%;
@@ -383,6 +389,10 @@
 }
 
 @media screen and (max-width: 380px) {
+  .border {
+    grid-template-rows: 0.3fr 0.3fr 0.5fr 0.5fr 0.3fr 0.8fr 2.3fr;
+  }
+
   .style {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;

@@ -102,7 +102,7 @@
   color: var(--color-shadow);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .sidebar {
     flex-direction: row;
     height: 100px;

@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-
+/* box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
+    inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow); */
+/* box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow); */
 :root {
   --color-bg: #ecf0f3;
   --color-secondary: #b260c7;
+  --color-lightSecondary: #d493e4;
   --color-white: #ffffff;
   --color-text: #31344b;
   --color-shadow: #BABECC;
@@ -18,6 +21,10 @@
 body {
   overflow-x: hidden;
   background: var(--color-bg);
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 1px var(--color-white);
 }
 
 .code-property {
@@ -64,4 +71,59 @@ body {
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
   color: var(--color-secondary);
   cursor: pointer;
+}
+
+.slider {
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
+    inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: #dfdfdf;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  box-shadow: -0px -0px 0px var(--color-secondary), 3px 3px 5px var(--color-lightSecondary),
+    inset -0px -0px 0px var(--color-secondary), inset 3px 3px 5px var(--color-lightSecondary);
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  box-shadow: -0px -0px 0px var(--color-secondary), 3px 3px 5px var(--color-lightSecondary),
+    inset -0px -0px 0px var(--color-secondary), inset 3px 3px 5px var(--color-lightSecondary);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  cursor: pointer;
+}
+
+.color div input::-webkit-color-swatch-wrapper, .color input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color div input::-webkit-color-swatch, .color input::-webkit-color-swatch {
+  border: none;
+  border-radius: 100%;
+}
+
+.color div input::-moz-color-swatch, .color input::-moz-color-swatch  {
+  border: none;
+  border-radius: 100%;
 }

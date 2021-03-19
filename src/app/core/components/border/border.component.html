@@ -6,28 +6,28 @@
         [ngClass]="borderService.borderTop ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderTop()"
       >
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up text-shadow"></i>
       </div>
       <div
         class="arrow bottom"
         [ngClass]="borderService.borderBottom ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderBottom()"
       >
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up text-shadow"></i>
       </div>
       <div
         class="arrow left"
         [ngClass]="borderService.borderLeft ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderLeft()"
       >
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up text-shadow"></i>
       </div>
       <div
         class="arrow right"
         [ngClass]="borderService.borderRight ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderRight()"
       >
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up text-shadow"></i>
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@
       class="border-radius-all"
       [ngClass]="borderService.borderRadiusPositionAll ? 'down' : 'up'"
     >
-      <i class="fas fa-sliders-h"></i>
+      <i class="fas fa-sliders-h text-shadow"></i>
     </div>
 
     <div
@@ -104,48 +104,56 @@
   <div class="border-style-code">
     <div class="style">
       <div
+        class="text-shadow"
         (click)="borderService.borderStyle = 'solid'"
         [ngClass]="borderService.borderStyle == 'solid' ? 'up' : 'down'"
       >
         solid
       </div>
       <div
+        class="text-shadow"
         (click)="borderService.borderStyle = 'dotted'"
         [ngClass]="borderService.borderStyle == 'dotted' ? 'up' : 'down'"
       >
         dotted
       </div>
       <div
+        class="text-shadow"
         (click)="borderService.borderStyle = 'dashed'"
         [ngClass]="borderService.borderStyle == 'dashed' ? 'up' : 'down'"
       >
         dashed
       </div>
       <div
+        class="text-shadow"
         (click)="borderService.borderStyle = 'double'"
         [ngClass]="borderService.borderStyle == 'double' ? 'up' : 'down'"
       >
         double
       </div>
       <div
+        class="text-shadow"
         (click)="borderService.borderStyle = 'groove'"
         [ngClass]="borderService.borderStyle == 'groove' ? 'up' : 'down'"
       >
         groove
       </div>
       <div
+        class="text-shadow"
         (click)="borderService.borderStyle = 'ridge'"
         [ngClass]="borderService.borderStyle == 'ridge' ? 'up' : 'down'"
       >
         ridge
       </div>
       <div
+        class="text-shadow"
         (click)="borderService.borderStyle = 'inset'"
         [ngClass]="borderService.borderStyle == 'inset' ? 'up' : 'down'"
       >
         inset
       </div>
       <div
+        class="text-shadow"
         (click)="borderService.borderStyle = 'outset'"
         [ngClass]="borderService.borderStyle == 'outset' ? 'up' : 'down'"
       >
@@ -156,6 +164,7 @@
     <div class="code">
       <div class="p">
         <p
+          class="text-shadow"
           id="border-code"
           *ngIf="borderService.isBorderPositionAll(); else CodeByPosition"
         >
@@ -164,28 +173,29 @@
           <span [style]="'color:'+borderService.borderColor">{{ borderService.borderColor }}</span>;
         </p>
         <ng-template #CodeByPosition>
-          <p *ngIf="borderService.borderTop" id="border-top">
+          <p class="text-shadow" *ngIf="borderService.borderTop" id="border-top">
             <span class="code-property">border-top:</span>
             {{ borderService.borderWidth }}px {{ borderService.borderStyle }}
             {{ borderService.borderColor }};
           </p>
-          <p *ngIf="borderService.borderBottom" id="border-bottom">
+          <p class="text-shadow" *ngIf="borderService.borderBottom" id="border-bottom">
             <span class="code-property">border-bottom:</span>
             {{ borderService.borderWidth }}px {{ borderService.borderStyle }}
             {{ borderService.borderColor }};
           </p>
-          <p *ngIf="borderService.borderLeft" id="border-left">
+          <p class="text-shadow" *ngIf="borderService.borderLeft" id="border-left">
             <span class="code-property">border-left:</span>
             {{ borderService.borderWidth }}px {{ borderService.borderStyle }}
             {{ borderService.borderColor }};
           </p>
-          <p *ngIf="borderService.borderRight" id="border-right">
+          <p class="text-shadow" *ngIf="borderService.borderRight" id="border-right">
             <span class="code-property">border-right:</span>
             {{ borderService.borderWidth }}px {{ borderService.borderStyle }}
             {{ borderService.borderColor }};
           </p>
         </ng-template>
         <p
+          class="text-shadow"
           *ngIf="
             borderService.borderRadiusPositionAll &&
             borderService.borderRadiusAll != 0
@@ -196,6 +206,7 @@
         </p>
 
         <p
+          class="text-shadow"
           *ngIf="
             !borderService.borderRadiusPositionAll &&
             this.borderService.isBorderRadiusGreaterThanZero()
@@ -219,15 +230,15 @@
           copyService.copyAnimation('border-copied')
         "
       >
-        <i class="far fa-copy"></i>
+        <i class="far fa-copy text-shadow"></i>
         <span class="copied up" id="border-copied">
-          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-check-circle text-shadow"></i>
         </span>
       </button>
     </div>
   </div>
   <div class="border-color">
-    <div class="color">
+    <div class="color text-shadow">
       Cor
       <input class="up" type="color" [(ngModel)]="borderService.borderColor" />
       {{ borderService.setBorder() }} {{ borderService.setCode() }}

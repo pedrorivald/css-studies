@@ -20,12 +20,12 @@ body {
   background: var(--color-bg);
 }
 
-.code-bg {
+.code-property {
   font-weight: 500;
   color: var(--color-secondary);
 }
 
-.code-color {
+.code-weight {
   font-weight: 500;
 }
 

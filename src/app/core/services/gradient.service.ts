@@ -58,23 +58,23 @@ export class GradientService {
 
   setCodeHTML() {
     this.codeHTML = `
-      <span class="code-bg">background:</span>
+      <span class="code-property">background:</span>
       <span class="code-gradient">linear-gradient</span>
         (to ${this.orientation},
-        <span class="code-color" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span> ${this.range1}%,
-        <span class="code-color" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span> ${this.range2}%);
+        <span class="code-weight" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span> ${this.range1}%,
+        <span class="code-weight" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span> ${this.range2}%);
     `;
     document.getElementById('code').innerHTML = this.codeHTML;
   }
 
   setCodeHTMLForThird() {
     this.codeHTML = `
-      <span class="code-bg">background:</span>
+      <span class="code-property">background:</span>
       <span class="code-gradient">linear-gradient</span>
         (to ${this.orientation},
-        <span class="code-color" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span> ${this.range1}%,
-        <span class="code-color" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span> ${this.range2}%,
-        <span class="code-color" style="color: ${this.ctrlColors[2].color}">${this.ctrlColors[2].color}</span> ${this.range3}%);
+        <span class="code-weight" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span> ${this.range1}%,
+        <span class="code-weight" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span> ${this.range2}%,
+        <span class="code-weight" style="color: ${this.ctrlColors[2].color}">${this.ctrlColors[2].color}</span> ${this.range3}%);
     `;
     document.getElementById('code').innerHTML = this.codeHTML;
   }

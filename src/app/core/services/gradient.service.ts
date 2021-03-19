@@ -55,11 +55,11 @@ export class GradientService {
   }
 
   setCodeCopyForThird() {
-    this.code = `background: linear-gradient (to ${this.orientation}, ${this.ctrlColors[0].color} ${this.range1}%, ${this.ctrlColors[1].color} ${this.range2}%, ${this.ctrlColors[2].color} ${this.range3}%);`;
+    this.code = `background: linear-gradient(to ${this.orientation}, ${this.ctrlColors[0].color} ${this.range1}%, ${this.ctrlColors[1].color} ${this.range2}%, ${this.ctrlColors[2].color} ${this.range3}%);`;
   }
 
   setCodeCopy() {
-    this.code = `background: linear-gradient (to ${this.orientation}, ${this.ctrlColors[0].color} ${this.range1}%, ${this.ctrlColors[1].color} ${this.range2}%);`;
+    this.code = `background: linear-gradient(to ${this.orientation}, ${this.ctrlColors[0].color} ${this.range1}%, ${this.ctrlColors[1].color} ${this.range2}%);`;
   }
 
   setCodeHTML() {

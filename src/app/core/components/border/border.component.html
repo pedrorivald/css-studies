@@ -1,1 +1,240 @@
-<p>border works!</p>
+<div class="border">
+  <div class="border-position">
+    <div class="arrows">
+      <div
+        class="arrow top"
+        [ngClass]="!borderService.borderTop ? 'up' : 'down'"
+        (click)="borderService.toggleBorderTop()"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </div>
+      <div
+        class="arrow bottom"
+        [ngClass]="!borderService.borderBottom ? 'up' : 'down'"
+        (click)="borderService.toggleBorderBottom()"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </div>
+      <div
+        class="arrow left"
+        [ngClass]="!borderService.borderLeft ? 'up' : 'down'"
+        (click)="borderService.toggleBorderLeft()"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </div>
+      <div
+        class="arrow right"
+        [ngClass]="!borderService.borderRight ? 'up' : 'down'"
+        (click)="borderService.toggleBorderRight()"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </div>
+    </div>
+  </div>
+  <div class="border-radius">
+    <div
+      (click)="
+        borderService.borderRadiusPositionAll = !borderService.borderRadiusPositionAll
+      "
+      class="border-radius-all"
+      [ngClass]="borderService.borderRadiusPositionAll ? 'down' : 'up'"
+    >
+      <i class="fas fa-sliders-h"></i>
+    </div>
+
+    <div
+      class="div-slider"
+      *ngIf="!borderService.borderRadiusPositionAll; else BorderRadiusAll"
+    >
+      <input
+        type="range"
+        [(ngModel)]="borderService.borderRadiusTop"
+        min="0"
+        max="100"
+        class="slider"
+        id="borderRadiusTop"
+      />
+
+      <input
+        type="range"
+        [(ngModel)]="borderService.borderRadiusBottom"
+        min="0"
+        max="100"
+        class="slider"
+        id="borderRadiusBottom"
+      />
+
+      <input
+        type="range"
+        [(ngModel)]="borderService.borderRadiusLeft"
+        min="0"
+        max="100"
+        class="slider"
+        id="borderRadiusLeft"
+      />
+
+      <input
+        type="range"
+        [(ngModel)]="borderService.borderRadiusRight"
+        min="0"
+        max="100"
+        class="slider"
+        id="borderRadiusRight"
+      />
+    </div>
+
+    <ng-template #BorderRadiusAll>
+      <div class="div-slider">
+        <input
+          type="range"
+          [(ngModel)]="borderService.borderRadiusAll"
+          min="0"
+          max="100"
+          class="slider"
+          id="borderRadiusAll"
+        />
+      </div>
+    </ng-template>
+  </div>
+  <div class="border-result">
+    <div class="div-result">
+      <div id="border-result" class="result"></div>
+    </div>
+  </div>
+  <div class="border-style-code">
+    <div class="style">
+      <div
+        (click)="borderService.borderStyle = 'solid'"
+        [ngClass]="borderService.borderStyle == 'solid' ? 'up' : 'down'"
+      >
+        solid
+      </div>
+      <div
+        (click)="borderService.borderStyle = 'dotted'"
+        [ngClass]="borderService.borderStyle == 'dotted' ? 'up' : 'down'"
+      >
+        dotted
+      </div>
+      <div
+        (click)="borderService.borderStyle = 'dashed'"
+        [ngClass]="borderService.borderStyle == 'dashed' ? 'up' : 'down'"
+      >
+        dashed
+      </div>
+      <div
+        (click)="borderService.borderStyle = 'double'"
+        [ngClass]="borderService.borderStyle == 'double' ? 'up' : 'down'"
+      >
+        double
+      </div>
+      <div
+        (click)="borderService.borderStyle = 'groove'"
+        [ngClass]="borderService.borderStyle == 'groove' ? 'up' : 'down'"
+      >
+        groove
+      </div>
+      <div
+        (click)="borderService.borderStyle = 'ridge'"
+        [ngClass]="borderService.borderStyle == 'ridge' ? 'up' : 'down'"
+      >
+        ridge
+      </div>
+      <div
+        (click)="borderService.borderStyle = 'inset'"
+        [ngClass]="borderService.borderStyle == 'inset' ? 'up' : 'down'"
+      >
+        inset
+      </div>
+      <div
+        (click)="borderService.borderStyle = 'outset'"
+        [ngClass]="borderService.borderStyle == 'outset' ? 'up' : 'down'"
+      >
+        outset
+      </div>
+    </div>
+
+    <div class="code">
+      <div class="p">
+        <p
+          id="border-code"
+          *ngIf="borderService.isBorderPositionAll(); else CodeByPosition"
+        >
+          border: {{ borderService.borderWidth }}px
+          {{ borderService.borderStyle }} {{ borderService.borderColor }};
+        </p>
+        <ng-template #CodeByPosition>
+          <p *ngIf="borderService.borderTop" id="border-top">
+            border-top: {{ borderService.borderWidth }}px
+            {{ borderService.borderStyle }} {{ borderService.borderColor }};
+          </p>
+          <p *ngIf="borderService.borderBottom" id="border-bottom">
+            border-bottom: {{ borderService.borderWidth }}px
+            {{ borderService.borderStyle }} {{ borderService.borderColor }};
+          </p>
+          <p *ngIf="borderService.borderLeft" id="border-left">
+            border-left: {{ borderService.borderWidth }}px
+            {{ borderService.borderStyle }} {{ borderService.borderColor }};
+          </p>
+          <p *ngIf="borderService.borderRight" id="border-right">
+            border-right: {{ borderService.borderWidth }}px
+            {{ borderService.borderStyle }} {{ borderService.borderColor }};
+          </p>
+        </ng-template>
+        <p
+          *ngIf="
+            borderService.borderRadiusPositionAll &&
+            borderService.borderRadiusAll != 0
+          "
+        >
+          border-radius: {{ borderService.borderRadiusAll }}px;
+        </p>
+
+        <p
+          *ngIf="
+            !borderService.borderRadiusPositionAll &&
+            this.borderService.isBorderRadiusGreaterThanZero()
+          "
+        >
+          border-radius: {{ this.borderService.borderRadiusTop }}px
+          {{ this.borderService.borderRadiusLeft }}px
+          {{ this.borderService.borderRadiusBottom }}px
+          {{ this.borderService.borderRadiusRight }}px;
+        </p>
+      </div>
+
+      <button
+        class="copy down"
+        (click)="
+          borderService.copy(
+            this.borderService.codeBorder,
+            this.borderService.codeBorderRadius
+          )
+        "
+      >
+        <i class="far fa-copy"></i>
+        <span class="copied up" id="border-copied">
+          <i class="fas fa-check-circle"></i>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="border-color">
+    <div class="color">
+      Cor
+      <input class="up" type="color" [(ngModel)]="borderService.borderColor" />
+      {{ borderService.setBorder() }} {{ borderService.setCode() }}
+    </div>
+  </div>
+  <div class="border-width">
+    <div class="div-slider">
+      <input
+        type="range"
+        [(ngModel)]="borderService.borderWidth"
+        min="0"
+        max="100"
+        class="slider"
+        id="borderWidth"
+      />
+    </div>
+  </div>
+</div>

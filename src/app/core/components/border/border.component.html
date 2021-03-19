@@ -3,28 +3,28 @@
     <div class="arrows">
       <div
         class="arrow top"
-        [ngClass]="!borderService.borderTop ? 'up' : 'down'"
+        [ngClass]="borderService.borderTop ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderTop()"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow bottom"
-        [ngClass]="!borderService.borderBottom ? 'up' : 'down'"
+        [ngClass]="borderService.borderBottom ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderBottom()"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow left"
-        [ngClass]="!borderService.borderLeft ? 'up' : 'down'"
+        [ngClass]="borderService.borderLeft ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderLeft()"
       >
         <i class="fas fa-arrow-up"></i>
       </div>
       <div
         class="arrow right"
-        [ngClass]="!borderService.borderRight ? 'up' : 'down'"
+        [ngClass]="borderService.borderRight ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderRight()"
       >
         <i class="fas fa-arrow-up"></i>

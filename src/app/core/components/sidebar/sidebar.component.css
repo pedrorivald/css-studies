@@ -94,7 +94,11 @@
   box-shadow: inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
 }
 
-.sidebar ul a:hover i {
+.sidebar ul li .active-link {
+  box-shadow: inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
+}
+
+.sidebar ul a:hover i, .sidebar ul li .active-link i {
   color: var(--color-shadow);
 }
 

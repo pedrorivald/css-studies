@@ -8,6 +8,7 @@ import { LogoComponent } from './core/components/logo/logo.component';
 import { GradientComponent } from './core/components/gradient/gradient.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { BorderComponent } from './core/components/border/border.component';
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BorderComponent } from './core/components/border/border.component';
     SidebarComponent,
     LogoComponent,
     GradientComponent,
-    BorderComponent
+    BorderComponent,
+    NotFoundComponent
   ],
   imports: [
     FormsModule,

@@ -10,6 +10,22 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { BorderComponent } from './core/components/border/border.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from '@fortawesome/angular-fontawesome';
+import { faCopy as farCopy } from '@fortawesome/free-regular-svg-icons';
+import {
+  faArrowUp,
+  faSlidersH,
+  faCheckCircle,
+  faPalette,
+  faBorderStyle,
+  faPlus,
+  faMinus
+} from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,15 +33,30 @@ import { NotFoundComponent } from './core/components/not-found/not-found.compone
     LogoComponent,
     GradientComponent,
     BorderComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    ClipboardModule
+    ClipboardModule,
+    FontAwesomeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private library: FaIconLibrary) {
+    library.addIcons(
+      faArrowUp,
+      faSlidersH,
+      farCopy,
+      faCheckCircle,
+      faGithub,
+      faPalette,
+      faBorderStyle,
+      faPlus,
+      faMinus
+    );
+  }
+}

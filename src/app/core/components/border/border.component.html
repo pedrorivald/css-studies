@@ -6,28 +6,28 @@
         [ngClass]="borderService.borderTop ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderTop()"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow bottom"
         [ngClass]="borderService.borderBottom ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderBottom()"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow left"
         [ngClass]="borderService.borderLeft ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderLeft()"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow right"
         [ngClass]="borderService.borderRight ? 'select' : 'no-select'"
         (click)="borderService.toggleBorderRight()"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@
       class="border-radius-all"
       [ngClass]="borderService.borderRadiusPositionAll ? 'down' : 'up'"
     >
-      <i class="fas fa-sliders-h text-shadow"></i>
+      <fa-icon class="icon-shadow" [icon]="['fas', 'sliders-h']"></fa-icon>
     </div>
 
     <div
@@ -230,9 +230,9 @@
           copyService.copyAnimation('border-copied')
         "
       >
-        <i class="far fa-copy text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['far', 'copy']"></fa-icon>
         <span class="copied up" id="border-copied">
-          <i class="fas fa-check-circle text-shadow"></i>
+          <fa-icon class="icon-shadow" [icon]="['fas', 'check-circle']"></fa-icon>
         </span>
       </button>
     </div>

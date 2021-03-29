@@ -23,8 +23,36 @@ body {
   background: var(--color-bg);
 }
 
+.ng-fa-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copied {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+  margin-left: 120px;
+  transition: all 0.3s;
+}
+
+.code .copied {
+  color: #3ec23e;
+}
+
 .text-shadow {
   text-shadow: 1px 1px 1px var(--color-white);
+}
+
+.icon-shadow {
+  filter: drop-shadow(1px 1px 1px var(--color-white));
 }
 
 .code-property {

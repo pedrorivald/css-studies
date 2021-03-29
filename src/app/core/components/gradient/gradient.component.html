@@ -12,11 +12,11 @@
       class="color-add down"
       (click)="gradientService.addColor()"
     >
-      <i class="fas fa-plus text-shadow"></i>
+      <fa-icon class="icon-shadow" [icon]="['fas', 'plus']"></fa-icon>
     </div>
     <ng-template #Remove>
       <div class="color-add down" (click)="gradientService.removeColor()">
-        <i class="fas fa-minus"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'minus']"></fa-icon>
       </div>
     </ng-template>
   </div>
@@ -58,56 +58,56 @@
         [ngClass]="gradientService.orientation == 'top left' ? 'up' : 'down'"
         (click)="gradientService.orientation = 'top left'"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow top"
         [ngClass]="gradientService.orientation == 'top' ? 'up' : 'down'"
         (click)="gradientService.orientation = 'top'"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow top-right text-shadow"
         [ngClass]="gradientService.orientation == 'top right' ? 'up' : 'down'"
         (click)="gradientService.orientation = 'top right'"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow left"
         [ngClass]="gradientService.orientation == 'left' ? 'up' : 'down'"
         (click)="gradientService.orientation = 'left'"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow center"
         [ngClass]="gradientService.orientation == 'top left' ? 'up' : 'down'"
         (click)="gradientService.orientation = 'top left'"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow right"
         [ngClass]="gradientService.orientation == 'right' ? 'up' : 'down'"
         (click)="gradientService.orientation = 'right'"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow bottom-left"
         [ngClass]="gradientService.orientation == 'bottom left' ? 'up' : 'down'"
         (click)="gradientService.orientation = 'bottom left'"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow bottom"
         [ngClass]="gradientService.orientation == 'bottom' ? 'up' : 'down'"
         (click)="gradientService.orientation = 'bottom'"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
       <div
         class="arrow bottom-right"
@@ -116,7 +116,7 @@
         "
         (click)="gradientService.orientation = 'bottom right'"
       >
-        <i class="fas fa-arrow-up text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
     </div>
 
@@ -127,9 +127,9 @@
         class="copy down"
         (click)="copyService.copy([gradientService.code]); copyService.copyAnimation('copied')"
       >
-        <i class="far fa-copy text-shadow"></i>
+        <fa-icon class="icon-shadow" [icon]="['far', 'copy']"></fa-icon>
         <span class="copied up" id="copied">
-          <i class="fas fa-check-circle text-shadow"></i>
+          <fa-icon class="icon-shadow" [icon]="['fas', 'check-circle']"></fa-icon>
         </span>
       </button>
     </div>

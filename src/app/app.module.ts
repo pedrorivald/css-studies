@@ -22,9 +22,12 @@ import {
   faPalette,
   faBorderStyle,
   faPlus,
-  faMinus
+  faMinus,
+  faExpand,
+  faBorderAll
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { BorderImageComponent } from './core/components/border-image/border-image.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
     GradientComponent,
     BorderComponent,
     NotFoundComponent,
+    BorderImageComponent,
   ],
   imports: [
     FormsModule,
@@ -56,7 +60,9 @@ export class AppModule {
       faPalette,
       faBorderStyle,
       faPlus,
-      faMinus
+      faMinus,
+      faExpand,
+      faBorderAll
     );
   }
 }

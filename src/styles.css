@@ -6,9 +6,42 @@
   --color-bg: #ecf0f3;
   --color-secondary: #b260c7;
   --color-lightSecondary: #d493e4;
+  --color-lightScrollbar: #d493e4;
   --color-white: #ffffff;
   --color-text: #31344b;
   --color-shadow: #BABECC;
+  --color-gray: #BABECC;
+  --color-slider: #dfdfdf;
+}
+
+html {
+  scrollbar-color: var(--color-secondary) var(--color-shadow);
+}
+
+::-webkit-scrollbar {
+  background-color: var(--color-shadow);
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-lightScrollbar);
+}
+
+.darkmode {
+  --color-bg: #131419;
+  --color-secondary: #03a9f4;
+  --color-lightSecondary: transparent;
+  --color-lightScrollbar: #75c8ee;
+  --color-white: rgba(0, 0, 0, 0.5);
+  --color-text: #666;
+  --color-shadow: rgba(255, 255, 255, 0.05);
+  --color-gray: #999;
+  --color-slider: #131419;
 }
 
 *{
@@ -73,7 +106,7 @@ body {
 .up {
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
     inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
-  color: var(--color-shadow);
+  color: var(--color-gray);
   cursor: pointer;
 }
 
@@ -91,13 +124,13 @@ body {
 .down:hover {
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
     inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
-  color: var(--color-shadow);
+  color: var(--color-gray);
 }
 
 .select {
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
     inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
-  color: var(--color-shadow);
+  color: var(--color-gray);
   cursor: pointer;
 }
 
@@ -115,7 +148,7 @@ body {
   height: 15px;
   margin-top: 10px;
   border-radius: 5px;
-  background: #dfdfdf;
+  background: var(--color-slider);
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;

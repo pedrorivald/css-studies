@@ -14,8 +14,8 @@ export class GradientService {
   range3: number = 100;
 
   public ctrlColors = [
-    { control: 'First', color: '#72e3ea' },
-    { control: 'Second', color: '#bd98bd' },
+    { control: 'First', color: '#b833ff' },
+    { control: 'Second', color: '#29a7d1' },
   ];
 
   constructor() { }

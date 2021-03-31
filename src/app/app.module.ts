@@ -25,7 +25,8 @@ import {
   faPlus,
   faMinus,
   faExpand,
-  faBorderAll
+  faBorderAll,
+  faAdjust
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { BorderImageComponent } from './core/components/border-image/border-image.component';
@@ -64,7 +65,8 @@ export class AppModule {
       faPlus,
       faMinus,
       faExpand,
-      faBorderAll
+      faBorderAll,
+      faAdjust
     );
   }
 }

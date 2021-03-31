@@ -58,7 +58,7 @@
   align-items: center;
   margin-top: 12px;
   width: 100px;
-  color: #666;
+  color: var(--color-text);
 }
 
 .color div input {
@@ -139,7 +139,7 @@
   padding: 10px;
   border-radius: 15px;
   text-align: center;
-  color: #666;
+  color: var(--color-text);
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
     inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
 }
@@ -154,6 +154,7 @@
   padding: 10px 20px 10px 20px;
   border-radius: 20px;
   font-size: 1.5rem;
+  background-color: transparent;
 }
 
 @media screen and (max-width: 900px) {

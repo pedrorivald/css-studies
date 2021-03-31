@@ -126,3 +126,17 @@
     padding: 10px 20px 10px 20px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .sidebar ul a {
+    font-size: 1.6rem;
+    padding: 14px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .sidebar ul a {
+    font-size: 1.4rem;
+    padding: 12px;
+  }
+}

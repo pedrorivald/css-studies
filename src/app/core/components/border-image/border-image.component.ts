@@ -1,4 +1,6 @@
+import { BorderImageService } from './../../services/border-image.service';
 import { Component, OnInit } from '@angular/core';
+import { CopyService } from '../../services/copy.service';
 
 @Component({
   selector: 'app-border-image',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BorderImageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public borderImageService: BorderImageService, public copyService: CopyService) { }
 
   ngOnInit(): void {
+    this.borderImageService.setColors();
   }
 
 }

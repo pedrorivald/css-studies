@@ -1,1 +1,153 @@
-<p>border-image works!</p>
+<div class="border-image">
+  <div class="gradient-color">
+    <div class="color">
+      <div
+        class="text-shadow"
+        *ngFor="let ctrl of borderImageService.ctrlColors; let i = index"
+      >
+        Cor {{ i + 1 }}
+        <input class="up" type="color" [(ngModel)]="ctrl.color" />
+        {{ borderImageService.setColors() }}
+      </div>
+    </div>
+    <div
+      *ngIf="borderImageService.ctrlColors.length < 3; else Remove"
+      class="color-add down"
+      (click)="borderImageService.addColor()"
+    >
+      <fa-icon class="icon-shadow" [icon]="['fas', 'plus']"></fa-icon>
+    </div>
+    <ng-template #Remove>
+      <div class="color-add down" (click)="borderImageService.removeColor()">
+        <fa-icon class="icon-shadow" [icon]="['fas', 'minus']"></fa-icon>
+      </div>
+    </ng-template>
+  </div>
+  <div class="border-image-result">
+    <div class="div-result">
+      <div id="result-border-image" class="result"></div>
+    </div>
+  </div>
+  <div class="border-image-url">
+    <div class="div-input-text">
+      <input
+        type="text"
+        id="border-image-url"
+        [(ngModel)]="borderImageService.borderImageURL"
+        placeholder="https://imagem.png"
+      />
+      <div class="btn-url">
+        <fa-icon
+          (click)="borderImageService.setImageURL()"
+          class="icon-shadow"
+          [icon]="['fas', 'check-circle']"
+        ></fa-icon>
+        <fa-icon
+          (click)="borderImageService.removeImageURL()"
+          class="icon-shadow"
+          [icon]="['fas', 'minus-circle']"
+        ></fa-icon>
+      </div>
+    </div>
+  </div>
+  <div class="border-image-slider">
+    <div class="div-slider">
+      <input
+        *ngIf="!borderImageService.isBorderURL()"
+        type="range"
+        [(ngModel)]="borderImageService.gradientAngle"
+        min="0"
+        max="360"
+        class="slider"
+        id="borderWidth"
+      />
+
+      <input
+        type="range"
+        [(ngModel)]="borderImageService.slice"
+        min="0"
+        max="150"
+        class="slider"
+        id="borderWidth"
+      />
+
+      <input
+        *ngIf="borderImageService.isBorderURL()"
+        type="range"
+        [(ngModel)]="borderImageService.width"
+        min="0"
+        max="150"
+        class="slider"
+        id="borderWidth"
+      />
+    </div>
+  </div>
+  <div class="border-image-code">
+    <div class="repeat">
+      <div
+        class="text-shadow"
+        (click)="borderImageService.repeat = 'round'"
+        [ngClass]="borderImageService.repeat == 'round' ? 'up' : 'down'"
+      >
+        round
+      </div>
+      <div
+        class="text-shadow"
+        (click)="borderImageService.repeat = 'stretch'"
+        [ngClass]="borderImageService.repeat == 'stretch' ? 'up' : 'down'"
+      >
+        stretch
+      </div>
+      <div
+        class="text-shadow"
+        (click)="borderImageService.repeat = 'repeat'"
+        [ngClass]="borderImageService.repeat == 'repeat' ? 'up' : 'down'"
+      >
+        repeat
+      </div>
+      <div
+        class="text-shadow"
+        (click)="borderImageService.repeat = 'space'"
+        [ngClass]="borderImageService.repeat == 'space' ? 'up' : 'down'"
+      >
+        space
+      </div>
+      <div
+        class="text-shadow"
+        (click)="borderImageService.repeat = 'initial'"
+        [ngClass]="borderImageService.repeat == 'initial' ? 'up' : 'down'"
+      >
+        initial
+      </div>
+      <div
+        class="text-shadow"
+        (click)="borderImageService.repeat = 'inherit'"
+        [ngClass]="borderImageService.repeat == 'inherit' ? 'up' : 'down'"
+      >
+        inherit
+      </div>
+    </div>
+
+    <div class="code">
+      <div class="p">
+        <div class="text-shadow" id="border-image-code"></div>
+      </div>
+
+      <button
+        class="copy down"
+        (click)="
+          copyService.copy([borderImageService.code]);
+          copyService.copyAnimation('border-copied')
+        "
+      >
+        <fa-icon class="icon-shadow" [icon]="['far', 'copy']"></fa-icon>
+        <span class="copied up" id="border-copied">
+          <fa-icon
+            class="icon-shadow"
+            [icon]="['fas', 'check-circle']"
+          ></fa-icon>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

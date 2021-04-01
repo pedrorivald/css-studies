@@ -1,33 +1,67 @@
 <div class="border-image">
-  <div class="gradient-color">
-    <div class="color">
+  <div class="border-image-color-slider">
+    <div class="gradient-color">
+      <div class="color">
+        <div
+          class="text-shadow"
+          *ngFor="let ctrl of borderImageService.ctrlColors; let i = index"
+        >
+          Cor {{ i + 1 }}
+          <input class="up" type="color" [(ngModel)]="ctrl.color" />
+          {{ borderImageService.setColors() }}
+        </div>
+      </div>
       <div
-        class="text-shadow"
-        *ngFor="let ctrl of borderImageService.ctrlColors; let i = index"
+        *ngIf="borderImageService.ctrlColors.length < 3; else Remove"
+        class="color-add down"
+        (click)="borderImageService.addColor()"
       >
-        Cor {{ i + 1 }}
-        <input class="up" type="color" [(ngModel)]="ctrl.color" />
-        {{ borderImageService.setColors() }}
+        <fa-icon class="icon-shadow" [icon]="['fas', 'plus']"></fa-icon>
+      </div>
+      <ng-template #Remove>
+        <div class="color-add down" (click)="borderImageService.removeColor()">
+          <fa-icon class="icon-shadow" [icon]="['fas', 'minus']"></fa-icon>
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="border-image-slider">
+      <div class="div-slider">
+        <input
+          type="range"
+          [(ngModel)]="borderImageService.gradientAngle"
+          min="0"
+          max="360"
+          class="slider"
+          id="borderWidth"
+        />
+
+        <input
+          type="range"
+          [(ngModel)]="borderImageService.slice"
+          min="0"
+          max="100"
+          class="slider"
+          id="borderWidth"
+        />
+
+        <input
+          type="range"
+          [(ngModel)]="borderImageService.width"
+          min="0"
+          max="100"
+          class="slider"
+          id="borderWidth"
+        />
       </div>
     </div>
-    <div
-      *ngIf="borderImageService.ctrlColors.length < 3; else Remove"
-      class="color-add down"
-      (click)="borderImageService.addColor()"
-    >
-      <fa-icon class="icon-shadow" [icon]="['fas', 'plus']"></fa-icon>
-    </div>
-    <ng-template #Remove>
-      <div class="color-add down" (click)="borderImageService.removeColor()">
-        <fa-icon class="icon-shadow" [icon]="['fas', 'minus']"></fa-icon>
-      </div>
-    </ng-template>
   </div>
   <div class="border-image-result">
     <div class="div-result">
       <div id="result-border-image" class="result"></div>
     </div>
   </div>
+  <div class="border-image-repeating">Repeating</div>
   <div class="border-image-url">
     <div class="div-input-text">
       <input
@@ -48,38 +82,6 @@
           [icon]="['fas', 'minus-circle']"
         ></fa-icon>
       </div>
-    </div>
-  </div>
-  <div class="border-image-slider">
-    <div class="div-slider">
-      <input
-        *ngIf="!borderImageService.isBorderURL()"
-        type="range"
-        [(ngModel)]="borderImageService.gradientAngle"
-        min="0"
-        max="360"
-        class="slider"
-        id="borderWidth"
-      />
-
-      <input
-        type="range"
-        [(ngModel)]="borderImageService.slice"
-        min="0"
-        max="150"
-        class="slider"
-        id="borderWidth"
-      />
-
-      <input
-        *ngIf="borderImageService.isBorderURL()"
-        type="range"
-        [(ngModel)]="borderImageService.width"
-        min="0"
-        max="150"
-        class="slider"
-        id="borderWidth"
-      />
     </div>
   </div>
   <div class="border-image-code">

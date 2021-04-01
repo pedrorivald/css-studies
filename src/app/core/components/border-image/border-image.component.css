@@ -212,7 +212,7 @@
   width: 95%;
   max-width: 250px;
   max-height: 200px;
-  overflow-y: scroll;
+  overflow: hidden;
   word-wrap: break-word;
   padding: 10px;
   border-radius: 15px;

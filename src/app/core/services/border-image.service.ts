@@ -24,7 +24,7 @@ export class BorderImageService {
     if (this.isBorderURL()) {
       this.getElementById(
         'result-border-image'
-      ).style.borderImage = `url(${this.borderImageURL}) ${this.slice} / ${this.width}px ${this.repeat}`;
+      ).style.borderImage = `url(${this.borderImageURL}) ${this.slice}% / ${this.width}% / 0 ${this.repeat}`;
 
       this.setCodeURLCopy();
       this.setCodeURLHTML();
@@ -34,7 +34,7 @@ export class BorderImageService {
       ).style.borderImage = `linear-gradient(
         ${this.gradientAngle}deg,
         ${this.ctrlColors[0].color},
-        ${this.ctrlColors[1].color}) ${this.slice}`;
+        ${this.ctrlColors[1].color}) ${this.slice}% / ${this.width}% / 0 ${this.repeat}`;
 
       this.setCodeCopy();
       this.setCodeHTML();
@@ -45,7 +45,7 @@ export class BorderImageService {
         ${this.gradientAngle}deg,
         ${this.ctrlColors[0].color},
         ${this.ctrlColors[1].color},
-        ${this.ctrlColors[2].color}) ${this.slice}`;
+        ${this.ctrlColors[2].color}) ${this.slice}% / ${this.width}% / 0 ${this.repeat}`;
 
       this.setCodeCopyForThird();
       this.setCodeHTMLForThird()
@@ -64,23 +64,23 @@ export class BorderImageService {
   }
 
   setCodeURLCopy() {
-    this.code = `border-image: url(${this.borderImageURL}) ${this.slice} / ${this.width}px ${this.repeat};`;
+    this.code = `border-image: url(${this.borderImageURL}) ${this.slice} / ${this.width}% / 0 ${this.repeat};`;
   }
 
   setCodeURLHTML() {
     this.codeHTML = `
       <span class="code-property">border-image:</span>
-      url (${this.borderImageURL}) ${this.slice} / ${this.width}px ${this.repeat};
+      url (${this.borderImageURL}) ${this.slice} / ${this.width}% / 0 ${this.repeat};
     `;
     this.getElementById('border-image-code').innerHTML = this.codeHTML;
   }
 
   setCodeCopyForThird() {
-    this.code = `border-image: linear-gradient(${this.gradientAngle}deg, ${this.ctrlColors[0].color}, ${this.ctrlColors[1].color}, ${this.ctrlColors[2].color} ${this.slice});`;
+    this.code = `border-image: linear-gradient(${this.gradientAngle}deg, ${this.ctrlColors[0].color}, ${this.ctrlColors[1].color}, ${this.ctrlColors[2].color}) ${this.slice}% / ${this.width}% / 0 ${this.repeat};`;
   }
 
   setCodeCopy() {
-    this.code = `border-image: linear-gradient(${this.gradientAngle}deg, ${this.ctrlColors[0].color}, ${this.ctrlColors[1].color} ${this.slice});`;
+    this.code = `border-image: linear-gradient(${this.gradientAngle}deg, ${this.ctrlColors[0].color}, ${this.ctrlColors[1].color}) ${this.slice}% / ${this.width}% / 0 ${this.repeat};`;
   }
 
   setCodeHTML() {
@@ -89,7 +89,7 @@ export class BorderImageService {
       <span class="code-gradient">linear-gradient</span>
         (${this.gradientAngle}deg,
         <span class="code-weight" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span>,
-        <span class="code-weight" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span> ${this.slice});
+        <span class="code-weight" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span>) ${this.slice}% / ${this.width}% / 0 ${this.repeat};
     `;
     this.getElementById('border-image-code').innerHTML = this.codeHTML;
   }
@@ -101,7 +101,7 @@ export class BorderImageService {
         (${this.gradientAngle}deg,
         <span class="code-weight" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span>,
         <span class="code-weight" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span>,
-        <span class="code-weight" style="color: ${this.ctrlColors[2].color}">${this.ctrlColors[2].color}</span> ${this.slice});
+        <span class="code-weight" style="color: ${this.ctrlColors[2].color}">${this.ctrlColors[2].color}</span>) ${this.slice}% / ${this.width}% / 0 ${this.repeat};
     `;
     this.getElementById('border-image-code').innerHTML = this.codeHTML;
   }

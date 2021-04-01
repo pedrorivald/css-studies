@@ -1,3 +1,7 @@
+@import "../../../shared/styles/code.css";
+@import "../../../shared/styles/color.css";
+@import "../../../shared/styles/slider.css";
+
 .gradient {
   width: 100%;
   height: 100%;
@@ -27,9 +31,6 @@
 .div-slider {
   width: 100%;
   margin-top: 60px;
-  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
-  padding: 20px;
-  border-radius: 20px;
 }
 
 .gradient-color {
@@ -37,49 +38,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.color {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
-  padding: 35px;
-  border-radius: 20px;
-}
-
-.color div {
-  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
-  padding: 8px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 12px;
-  width: 100px;
-  color: var(--color-text);
-}
-
-.color div input {
-  border-radius: 100%;
-  margin-left: 4px;
-  height: 30px;
-  width: 30px;
-  border: none;
-  outline: none;
-  -webkit-appearance: none;
-}
-
-.color-add {
-  margin-top: 30px;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  font-size: 1.4rem;
 }
 
 .gradient-orientation {
@@ -125,36 +83,7 @@
 .bottom-right .ng-fa-icon { transform: rotate(135deg); }
 
 .code {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
   width: 70%;
-  padding: 15px;
-  border-radius: 20px;
-}
-
-.code p {
-  padding: 10px;
-  border-radius: 15px;
-  text-align: center;
-  color: var(--color-text);
-  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
-    inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
-}
-
-.code .copy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  outline: none;
-  border: none;
-  margin-top: 14px;
-  padding: 10px 20px 10px 20px;
-  border-radius: 20px;
-  font-size: 1.5rem;
-  background-color: transparent;
 }
 
 @media screen and (max-width: 900px) {
@@ -180,17 +109,6 @@
     margin-top: 60px;
   }
 
-  .color {
-    flex-direction: row;
-    padding: 20px;
-  }
-
-  .color div {
-    margin-top: 0;
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-
   .gradient-orientation {
     margin-top: 35px;
   }
@@ -207,20 +125,5 @@
 
   .code {
     width: 80%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .color div {
-    flex-direction: column;
-    padding: 12px 0px 12px 0px;
-    width: 70px;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .color {
-    padding: 5px;
-    box-shadow: none;
   }
 }

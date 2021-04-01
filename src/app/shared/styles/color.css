@@ -1,0 +1,130 @@
+.color div input::-webkit-color-swatch-wrapper, .color input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color div input::-webkit-color-swatch, .color input::-webkit-color-swatch {
+  border: none;
+  border-radius: 100%;
+}
+
+.color div input::-moz-color-swatch, .color input::-moz-color-swatch  {
+  border: none;
+  border-radius: 100%;
+}
+
+.color {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
+  padding: 35px;
+  border-radius: 20px;
+}
+
+.color div {
+  box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow);
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  color: var(--color-text);
+}
+
+.color div input, .color input {
+  border-radius: 100%;
+  margin-left: 4px;
+  height: 30px;
+  width: 30px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.color-add {
+  margin-top: 30px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.4rem;
+}
+
+.color div:nth-child(2),
+.color div:nth-child(3) {
+  margin-top: 12px;
+}
+
+@media screen and (max-width: 1100px) {
+  .color {
+    flex-direction: row;
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .color div:nth-child(2),
+  .color div:nth-child(3) {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .color div {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .color {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .color {
+    padding: 0;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+
+  .color div {
+    flex-direction: column;
+    padding: 12px 0px 12px 0px;
+    width: 80px;
+  }
+
+  .color-add {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .color div {
+    padding: 6px 0px 6px 0px;
+    width: 65px;
+  }
+
+  .color-add {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .color div {
+    padding: 5px 0px 5px 0px;
+    width: 50px;
+    font-size: 0.9rem;
+  }
+
+  .color-add {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}

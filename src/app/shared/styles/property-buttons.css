@@ -1,0 +1,15 @@
+.property-buttons {
+  width: 90%;
+  display: grid;
+  gap: 8px 8px;
+}
+
+.property-buttons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 7px 3px 7px 3px;
+  font-weight: 500;
+  cursor: pointer;
+}

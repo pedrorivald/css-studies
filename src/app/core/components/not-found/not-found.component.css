@@ -12,8 +12,8 @@
    font-weight: bold;
    color: var(--color-bg);
    text-shadow:
-   4px 4px 9px #d3d3d3,
-   -3px -3px 3px #d3d3d3;
+   4px 4px 9px var(--color-notFound),
+   -3px -3px 3px var(--color-notFound);
 }
 
 @media screen and (max-width: 1100px) {

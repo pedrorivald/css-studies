@@ -12,6 +12,7 @@
   --color-shadow: #BABECC;
   --color-gray: #BABECC;
   --color-slider: #dfdfdf;
+  --color-notFound: #d3d3d3;
 }
 
 html {
@@ -42,6 +43,7 @@ html {
   --color-shadow: rgba(255, 255, 255, 0.05);
   --color-gray: #999;
   --color-slider: #131419;
+  --color-notFound: rgba(0, 0, 0, 0.3);
 }
 
 *{

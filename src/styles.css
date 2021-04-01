@@ -140,7 +140,7 @@ body {
   cursor: pointer;
 }
 
-.slider {
+.slider, .slider-disabled {
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
     inset -3px -3px 7px var(--color-white), inset 3px 3px 5px var(--color-shadow);
   -webkit-appearance: none;
@@ -178,6 +178,28 @@ body {
   height: 25px;
   border-radius: 50%;
   background: var(--color-secondary);
+  cursor: pointer;
+}
+
+.slider-disabled::-webkit-slider-thumb {
+  box-shadow: -0px -0px 0px var(--color-secondary), 3px 3px 5px var(--color-lightSecondary),
+    inset -0px -0px 0px var(--color-secondary), inset 3px 3px 5px var(--color-lightSecondary);
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--color-gray);
+  cursor: pointer;
+}
+
+.slider-disabled::-moz-range-thumb {
+  box-shadow: -0px -0px 0px var(--color-secondary), 3px 3px 5px var(--color-lightSecondary),
+    inset -0px -0px 0px var(--color-secondary), inset 3px 3px 5px var(--color-lightSecondary);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--color-gray);
   cursor: pointer;
 }
 

@@ -12,6 +12,7 @@ export class BorderImageService {
   repeat: string = 'round';
   borderImageURL: string = '';
   borderImageURLBoolean: boolean = true;
+  linearRepeating: number = 0;
 
   public ctrlColors = [
     { control: 'First', color: '#b833ff' },
@@ -28,6 +29,17 @@ export class BorderImageService {
 
       this.setCodeURLCopy();
       this.setCodeURLHTML();
+    } else if (this.linearRepeating > 0 && this.ctrlColors.length == 3) {
+      this.getElementById(
+        'result-border-image'
+      ).style.borderImage = `repeating-linear-gradient(
+        ${this.gradientAngle}deg,
+        ${this.ctrlColors[0].color},
+        ${this.ctrlColors[1].color},
+        ${this.ctrlColors[2].color} ${this.linearRepeating}px) ${this.slice}% / ${this.width}% / 0 ${this.repeat}`;
+
+      this.setCodeCopyRepeating();
+      this.setCodeHTMLRepeating();
     } else if (this.ctrlColors.length < 3) {
       this.getElementById(
         'result-border-image'
@@ -102,6 +114,22 @@ export class BorderImageService {
         <span class="code-weight" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span>,
         <span class="code-weight" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span>,
         <span class="code-weight" style="color: ${this.ctrlColors[2].color}">${this.ctrlColors[2].color}</span>) ${this.slice}% / ${this.width}% / 0 ${this.repeat};
+    `;
+    this.getElementById('border-image-code').innerHTML = this.codeHTML;
+  }
+
+  setCodeCopyRepeating() {
+    this.code = `repeating-linear-gradient(${this.gradientAngle}deg, ${this.ctrlColors[0].color}, ${this.ctrlColors[1].color}, ${this.ctrlColors[2].color} ${this.linearRepeating}px) ${this.slice}% / ${this.width}% / 0 ${this.repeat}`;
+  }
+
+  setCodeHTMLRepeating() {
+    this.codeHTML = `
+      <span class="code-property">border-image:</span>
+      <span class="code-gradient">repeating-linear-gradient</span>
+        (${this.gradientAngle}deg,
+        <span class="code-weight" style="color: ${this.ctrlColors[0].color}">${this.ctrlColors[0].color}</span>,
+        <span class="code-weight" style="color: ${this.ctrlColors[1].color}">${this.ctrlColors[1].color}</span>,
+        <span class="code-weight" style="color: ${this.ctrlColors[2].color}">${this.ctrlColors[2].color}</span> ${this.linearRepeating}px) ${this.slice}% / ${this.width}% / 0 ${this.repeat};
     `;
     this.getElementById('border-image-code').innerHTML = this.codeHTML;
   }

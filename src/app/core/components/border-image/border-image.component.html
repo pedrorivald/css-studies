@@ -61,7 +61,20 @@
       <div id="result-border-image" class="result"></div>
     </div>
   </div>
-  <div class="border-image-repeating">Repeating</div>
+  <div class="border-image-repeating">
+    <div class="div-slider">
+      <div class="label text-shadow">Linear Repeating</div>
+      <input
+        type="range"
+        [disabled]="borderImageService.ctrlColors.length != 3"
+        [ngClass]="borderImageService.ctrlColors.length == 3 ? 'slider' : 'slider-disabled'"
+        [(ngModel)]="borderImageService.linearRepeating"
+        min="0"
+        max="100"
+        id="borderWidth"
+      />
+    </div>
+  </div>
   <div class="border-image-url">
     <div class="div-input-text">
       <input

@@ -6,6 +6,28 @@
 
 </h1>
 
+<h3>
+
+  <ol>
+    <li>
+
+[Tecnologias](#tech)
+    </li>
+
+  <li>
+    
+  [Imagens](#assets)
+      <ol>
+        <li>[Desktop](#desktop)</li>
+        <li>[Mobile](#mobile)</li>
+        <li>[Modo Escuro](#darkmode)</li>
+      </ol>
+    </li>
+    <li>[Autor](#author)</li>
+  </ol>
+
+</h3>
+
 <h3 align="center">
 
   Aplicação com interface baseada em Neumorphism | Geração de códigos CSS para Gradientes e Bordas | Com visualização instantânea.
@@ -14,7 +36,7 @@
 
 </h3>
 
-<h2 align="center">
+<h2 align="center" id="tech">
 
   Tecnologias
   <br>
@@ -26,9 +48,9 @@
 
 </h2>
 
-<div align="center">
+<div align="center" id="assets">
 
-  <h3>Desktop:</h3>
+  <h3 id="desktop">Desktop:</h3>
 
   <img src="./.github/cssstudies-desktop.gif" />
 
@@ -38,9 +60,15 @@
 
   <br>
 
-  <h3>Mobile:</h3>
+  <h3 id="mobile">Mobile:</h3>
 
   <img src="./.github/cssstudies.gif" />
+
+  <br>
+
+  <h3 id="darkmode">Modo Escuro:</h3>
+
+  <img src="./.github/desktop-darkmode.png" />
 
 </div>
 
@@ -50,7 +78,7 @@
 
 </h4>
 
-<div align="center">
+<div align="center" id="author">
 
   | [<img src="https://avatars2.githubusercontent.com/u/61600036?s=150&u=3ac690ed826fc73ec79c08d70e8c77e0efdc5d5b&v=4"><br><sub>@pedrorivald</sub>](https://github.com/pedrorivald) |
 | :---: |

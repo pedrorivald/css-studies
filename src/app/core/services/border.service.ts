@@ -154,4 +154,48 @@ export class BorderService {
       ? true
       : false;
   }
+
+  setCodeHtml() {
+    let code = '';
+    if(this.isBorderPositionAll()) {
+      code = `<span class="code-property">border:</span>
+      ${this.borderWidth}px ${this.borderStyle}
+      <span style="color: ${this.borderColor}">${this.borderColor}</span>;`;
+    } else {
+      if(this.borderTop) {
+        code += `<p class="text-shadow"><span class="code-property">border-top:</span>
+        ${this.borderWidth}px ${this.borderStyle} ${this.borderColor};</p>`
+      }
+
+      if(this.borderBottom) {
+        code += `<p class="text-shadow"><span class="code-property">border-bottom:</span>
+        ${this.borderWidth}px ${this.borderStyle} ${this.borderColor};</p>`;
+      }
+
+      if(this.borderLeft) {
+        code += `<p class="text-shadow"><span class="code-property">border-left:</span>
+        ${this.borderWidth}px ${this.borderStyle} ${this.borderColor};</p>`;
+      }
+
+      if(this.borderRight) {
+        code += `<p class="text-shadow"><span class="code-property">border-right:</span>
+        ${this.borderWidth}px ${this.borderStyle} ${this.borderColor};</p>`;
+      }
+    }
+
+    if(this.borderRadiusPositionAll && this.borderRadiusAll != 0) {
+      code += `<p class="text-shadow">
+      <span class="code-property">border-radius:</span>${this.borderRadiusAll}px;
+      </p>`;
+    }
+
+    if(!this.borderRadiusPositionAll && this.isBorderRadiusGreaterThanZero()) {
+      code += `<p class="text-shadow">
+      <span class="code-property">border-radius:</span>
+        ${this.borderRadiusTop}px ${this.borderRadiusLeft}px ${this.borderRadiusBottom}px ${this.borderRadiusRight}px;
+      </p>`;
+    }
+
+    return document.getElementById("border-code").innerHTML = code;
+  }
 }

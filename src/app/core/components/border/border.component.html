@@ -163,60 +163,8 @@
 
     <div class="code">
       <div class="p">
-        <p
-          class="text-shadow"
-          id="border-code"
-          *ngIf="borderService.isBorderPositionAll(); else CodeByPosition"
-        >
-          <span class="code-property">border:</span>
-          {{ borderService.borderWidth }}px {{ borderService.borderStyle }}
-          <span [style]="'color:'+borderService.borderColor">{{ borderService.borderColor }}</span>;
-        </p>
-        <ng-template #CodeByPosition>
-          <p class="text-shadow" *ngIf="borderService.borderTop" id="border-top">
-            <span class="code-property">border-top:</span>
-            {{ borderService.borderWidth }}px {{ borderService.borderStyle }}
-            {{ borderService.borderColor }};
-          </p>
-          <p class="text-shadow" *ngIf="borderService.borderBottom" id="border-bottom">
-            <span class="code-property">border-bottom:</span>
-            {{ borderService.borderWidth }}px {{ borderService.borderStyle }}
-            {{ borderService.borderColor }};
-          </p>
-          <p class="text-shadow" *ngIf="borderService.borderLeft" id="border-left">
-            <span class="code-property">border-left:</span>
-            {{ borderService.borderWidth }}px {{ borderService.borderStyle }}
-            {{ borderService.borderColor }};
-          </p>
-          <p class="text-shadow" *ngIf="borderService.borderRight" id="border-right">
-            <span class="code-property">border-right:</span>
-            {{ borderService.borderWidth }}px {{ borderService.borderStyle }}
-            {{ borderService.borderColor }};
-          </p>
-        </ng-template>
-        <p
-          class="text-shadow"
-          *ngIf="
-            borderService.borderRadiusPositionAll &&
-            borderService.borderRadiusAll != 0
-          "
-        >
-          <span class="code-property">border-radius:</span>
-          {{ borderService.borderRadiusAll }}px;
-        </p>
-
-        <p
-          class="text-shadow"
-          *ngIf="
-            !borderService.borderRadiusPositionAll &&
-            this.borderService.isBorderRadiusGreaterThanZero()
-          "
-        >
-          <span class="code-property">border-radius:</span>
-          {{ this.borderService.borderRadiusTop }}px
-          {{ this.borderService.borderRadiusLeft }}px
-          {{ this.borderService.borderRadiusBottom }}px
-          {{ this.borderService.borderRadiusRight }}px;
+        <p class="text-shadow" id="border-code">
+          {{ borderService.setCodeHtml() }}
         </p>
       </div>
 
@@ -232,7 +180,10 @@
       >
         <fa-icon class="icon-shadow" [icon]="['far', 'copy']"></fa-icon>
         <span class="copied up" id="border-copied">
-          <fa-icon class="icon-shadow" [icon]="['fas', 'check-circle']"></fa-icon>
+          <fa-icon
+            class="icon-shadow"
+            [icon]="['fas', 'check-circle']"
+          ></fa-icon>
         </span>
       </button>
     </div>

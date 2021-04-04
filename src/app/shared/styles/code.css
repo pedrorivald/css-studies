@@ -13,7 +13,7 @@
   word-wrap: break-word;
   padding: 10px;
   border-radius: 15px;
-  text-align: center;
+  text-align: left;
   color: var(--color-text);
   box-shadow: -3px -3px 7px var(--color-white), 3px 3px 5px var(--color-shadow),
     inset -3px -3px 7px var(--color-white),

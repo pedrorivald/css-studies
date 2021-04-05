@@ -163,9 +163,7 @@
 
     <div class="code">
       <div class="p">
-        <p class="text-shadow" id="border-code">
-          {{ borderService.setCodeHtml() }}
-        </p>
+        <p class="text-shadow" id="border-code"></p>
       </div>
 
       <button
@@ -192,7 +190,7 @@
     <div class="color text-shadow">
       Cor
       <input class="up" type="color" [(ngModel)]="borderService.borderColor" />
-      {{ borderService.setBorder() }} {{ borderService.setCode() }}
+      {{ borderService.setBorder() }}
     </div>
   </div>
   <div class="border-width">

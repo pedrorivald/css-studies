@@ -12,8 +12,6 @@ export class BorderComponent implements OnInit {
   constructor(public borderService: BorderService, public copyService: CopyService) { }
 
   ngOnInit(): void {
-    this.borderService.borderDom = document.getElementById('border-result');
     this.borderService.setBorder();
   }
-
 }

@@ -1,17 +1,14 @@
 <div class="gradient">
   <div class="gradient-color">
     <div class="color">
-      <div class="text-shadow" *ngFor="let ctrl of gradientService.ctrlColors; let i = index">
+      <div *ngFor="let ctrl of gradientService.ctrlColors; let i = index" class="text-shadow">
         Cor {{ i + 1 }}
         <input class="up" type="color" [(ngModel)]="ctrl.color" />
         {{ gradientService.setColors() }} {{ gradientService.setCode() }}
       </div>
     </div>
-    <div
-      *ngIf="gradientService.ctrlColors.length < 3; else Remove"
-      class="color-add down"
-      (click)="gradientService.addColor()"
-    >
+    <div *ngIf="gradientService.ctrlColors.length < 3; else Remove"
+      class="color-add down" (click)="gradientService.addColor()">
       <fa-icon class="icon-shadow" [icon]="['fas', 'plus']"></fa-icon>
     </div>
     <ng-template #Remove>
@@ -24,111 +21,71 @@
     <div class="result" id="result"></div>
 
     <div class="div-slider">
-      <input
-        type="range"
-        [(ngModel)]="gradientService.range1"
-        min="0"
-        max="100"
-        class="slider"
-        id="range1"
-      />
-      <input
-        type="range"
-        [(ngModel)]="gradientService.range2"
-        min="0"
-        max="100"
-        class="slider"
-        id="range2"
-      />
-      <input
-        *ngIf="gradientService.ctrlColors.length == 3"
-        type="range"
-        [(ngModel)]="gradientService.range3"
-        min="0"
-        max="100"
-        class="slider"
-        id="range3"
-      />
+      <input type="range" [(ngModel)]="gradientService.range1"
+        min="0" max="100" class="slider" id="range1"/>
+
+      <input type="range" [(ngModel)]="gradientService.range2"
+        min="0" max="100" class="slider"id="range2"/>
+
+      <input *ngIf="gradientService.ctrlColors.length == 3"
+        type="range" [(ngModel)]="gradientService.range3"
+        min="0" max="100" class="slider" id="range3"/>
     </div>
   </div>
   <div class="gradient-orientation">
     <div class="arrows">
-      <div
-        class="arrow top-left"
+      <div class="arrow top-left"
         [ngClass]="gradientService.orientation == 'top left' ? 'up' : 'down'"
-        (click)="gradientService.orientation = 'top left'"
-      >
+        (click)="gradientService.orientation = 'top left'">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow top"
+      <div class="arrow top"
         [ngClass]="gradientService.orientation == 'top' ? 'up' : 'down'"
-        (click)="gradientService.orientation = 'top'"
-      >
+        (click)="gradientService.orientation = 'top'">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow top-right text-shadow"
+      <div class="arrow top-right text-shadow"
         [ngClass]="gradientService.orientation == 'top right' ? 'up' : 'down'"
-        (click)="gradientService.orientation = 'top right'"
-      >
+        (click)="gradientService.orientation = 'top right'">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow left"
+      <div class="arrow left"
         [ngClass]="gradientService.orientation == 'left' ? 'up' : 'down'"
-        (click)="gradientService.orientation = 'left'"
-      >
+        (click)="gradientService.orientation = 'left'">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow center"
+      <div class="arrow center"
         [ngClass]="gradientService.orientation == 'top left' ? 'up' : 'down'"
-        (click)="gradientService.orientation = 'top left'"
-      >
+        (click)="gradientService.orientation = 'top left'">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow right"
+      <div class="arrow right"
         [ngClass]="gradientService.orientation == 'right' ? 'up' : 'down'"
-        (click)="gradientService.orientation = 'right'"
-      >
+        (click)="gradientService.orientation = 'right'">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow bottom-left"
+      <div class="arrow bottom-left"
         [ngClass]="gradientService.orientation == 'bottom left' ? 'up' : 'down'"
-        (click)="gradientService.orientation = 'bottom left'"
-      >
+        (click)="gradientService.orientation = 'bottom left'">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow bottom"
+      <div class="arrow bottom"
         [ngClass]="gradientService.orientation == 'bottom' ? 'up' : 'down'"
-        (click)="gradientService.orientation = 'bottom'"
-      >
+        (click)="gradientService.orientation = 'bottom'">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow bottom-right"
-        [ngClass]="
-          gradientService.orientation == 'bottom right' ? 'up' : 'down'
-        "
-        (click)="gradientService.orientation = 'bottom right'"
-      >
+      <div class="arrow bottom-right"
+        [ngClass]="gradientService.orientation == 'bottom right' ? 'up' : 'down'"
+        (click)="gradientService.orientation = 'bottom right'">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
     </div>
 
     <div class="code">
-      <div class="p">
-        <div id="code" class="text-shadow"></div>
-      </div>
+      <div class="p"><div id="code" class="text-shadow"></div></div>
 
-      <button
-        class="copy down"
-        (click)="copyService.copy([gradientService.code]); copyService.copyAnimation('copied')"
-      >
+      <button class="copy down"
+        (click)="copyService.copy([gradientService.code]); copyService.copyAnimation('copied')">
         <fa-icon class="icon-shadow" [icon]="['far', 'copy']"></fa-icon>
         <span class="copied up" id="copied">
           <fa-icon class="icon-shadow" [icon]="['fas', 'check-circle']"></fa-icon>

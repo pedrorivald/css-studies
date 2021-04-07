@@ -1,98 +1,50 @@
 <div class="border">
   <div class="border-position">
     <div class="arrows">
-      <div
-        class="arrow top"
-        [ngClass]="borderService.borderTop ? 'select' : 'no-select'"
-        (click)="borderService.toggleBorderTop()"
-      >
+      <div [ngClass]="borderService.borderTop ? 'select' : 'no-select'"
+        class="arrow top" (click)="borderService.toggleBorderTop()">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow bottom"
-        [ngClass]="borderService.borderBottom ? 'select' : 'no-select'"
-        (click)="borderService.toggleBorderBottom()"
-      >
+      <div [ngClass]="borderService.borderBottom ? 'select' : 'no-select'"
+        class="arrow bottom" (click)="borderService.toggleBorderBottom()">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow left"
-        [ngClass]="borderService.borderLeft ? 'select' : 'no-select'"
-        (click)="borderService.toggleBorderLeft()"
-      >
+      <div [ngClass]="borderService.borderLeft ? 'select' : 'no-select'"
+        class="arrow left" (click)="borderService.toggleBorderLeft()">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
-      <div
-        class="arrow right"
-        [ngClass]="borderService.borderRight ? 'select' : 'no-select'"
-        (click)="borderService.toggleBorderRight()"
-      >
+      <div [ngClass]="borderService.borderRight ? 'select' : 'no-select'"
+        class="arrow right" (click)="borderService.toggleBorderRight()">
         <fa-icon class="icon-shadow" [icon]="['fas', 'arrow-up']"></fa-icon>
       </div>
     </div>
   </div>
   <div class="border-radius">
-    <div
-      (click)="
-        borderService.borderRadiusPositionAll = !borderService.borderRadiusPositionAll
-      "
-      class="border-radius-all"
-      [ngClass]="borderService.borderRadiusPositionAll ? 'down' : 'up'"
-    >
+    <div [ngClass]="borderService.borderRadiusPositionAll ? 'down' : 'up'"
+      (click)="borderService.borderRadiusPositionAll = !borderService.borderRadiusPositionAll"
+      class="border-radius-all">
       <fa-icon class="icon-shadow" [icon]="['fas', 'sliders-h']"></fa-icon>
     </div>
 
-    <div
-      class="div-slider"
-      *ngIf="!borderService.borderRadiusPositionAll; else BorderRadiusAll"
-    >
-      <input
-        type="range"
-        [(ngModel)]="borderService.borderRadiusTop"
-        min="0"
-        max="100"
-        class="slider"
-        id="borderRadiusTop"
-      />
+    <div *ngIf="!borderService.borderRadiusPositionAll; else BorderRadiusAll"
+      class="div-slider">
+      <input type="range" [(ngModel)]="borderService.borderRadiusTop"
+        min="0" max="100" class="slider" id="borderRadiusTop"/>
 
-      <input
-        type="range"
-        [(ngModel)]="borderService.borderRadiusBottom"
-        min="0"
-        max="100"
-        class="slider"
-        id="borderRadiusBottom"
-      />
+      <input type="range" [(ngModel)]="borderService.borderRadiusBottom"
+        min="0" max="100" class="slider" id="borderRadiusBottom"/>
 
-      <input
-        type="range"
-        [(ngModel)]="borderService.borderRadiusLeft"
-        min="0"
-        max="100"
-        class="slider"
-        id="borderRadiusLeft"
-      />
+      <input type="range" [(ngModel)]="borderService.borderRadiusLeft"
+        min="0" max="100" class="slider" id="borderRadiusLeft"/>
 
-      <input
-        type="range"
-        [(ngModel)]="borderService.borderRadiusRight"
-        min="0"
-        max="100"
-        class="slider"
-        id="borderRadiusRight"
-      />
+      <input type="range" [(ngModel)]="borderService.borderRadiusRight"
+        min="0" max="100" class="slider" id="borderRadiusRight"/>
     </div>
 
     <ng-template #BorderRadiusAll>
       <div class="div-slider">
-        <input
-          type="range"
-          [(ngModel)]="borderService.borderRadiusAll"
-          min="0"
-          max="100"
-          class="slider"
-          id="borderRadiusAll"
-        />
+        <input type="range" [(ngModel)]="borderService.borderRadiusAll"
+          min="0" max="100" class="slider" id="borderRadiusAll"/>
       </div>
     </ng-template>
   </div>
@@ -103,85 +55,51 @@
   </div>
   <div class="border-style-code">
     <div class="property-buttons">
-      <div
-        class="text-shadow"
-        (click)="borderService.borderStyle = 'solid'"
-        [ngClass]="borderService.borderStyle == 'solid' ? 'up' : 'down'"
-      >
+      <div [ngClass]="borderService.borderStyle == 'solid' ? 'up' : 'down'"
+        class="text-shadow" (click)="borderService.borderStyle = 'solid'">
         solid
       </div>
-      <div
-        class="text-shadow"
-        (click)="borderService.borderStyle = 'dotted'"
-        [ngClass]="borderService.borderStyle == 'dotted' ? 'up' : 'down'"
-      >
+      <div [ngClass]="borderService.borderStyle == 'dotted' ? 'up' : 'down'"
+        class="text-shadow" (click)="borderService.borderStyle = 'dotted'">
         dotted
       </div>
-      <div
-        class="text-shadow"
-        (click)="borderService.borderStyle = 'dashed'"
-        [ngClass]="borderService.borderStyle == 'dashed' ? 'up' : 'down'"
-      >
+      <div [ngClass]="borderService.borderStyle == 'dashed' ? 'up' : 'down'"
+        class="text-shadow" (click)="borderService.borderStyle = 'dashed'">
         dashed
       </div>
-      <div
-        class="text-shadow"
-        (click)="borderService.borderStyle = 'double'"
-        [ngClass]="borderService.borderStyle == 'double' ? 'up' : 'down'"
-      >
+      <div [ngClass]="borderService.borderStyle == 'double' ? 'up' : 'down'"
+        class="text-shadow" (click)="borderService.borderStyle = 'double'">
         double
       </div>
-      <div
-        class="text-shadow"
-        (click)="borderService.borderStyle = 'groove'"
-        [ngClass]="borderService.borderStyle == 'groove' ? 'up' : 'down'"
-      >
+      <div [ngClass]="borderService.borderStyle == 'groove' ? 'up' : 'down'"
+        class="text-shadow" (click)="borderService.borderStyle = 'groove'">
         groove
       </div>
-      <div
-        class="text-shadow"
-        (click)="borderService.borderStyle = 'ridge'"
-        [ngClass]="borderService.borderStyle == 'ridge' ? 'up' : 'down'"
-      >
+      <div [ngClass]="borderService.borderStyle == 'ridge' ? 'up' : 'down'"
+        class="text-shadow" (click)="borderService.borderStyle = 'ridge'">
         ridge
       </div>
-      <div
-        class="text-shadow"
-        (click)="borderService.borderStyle = 'inset'"
-        [ngClass]="borderService.borderStyle == 'inset' ? 'up' : 'down'"
-      >
+      <div [ngClass]="borderService.borderStyle == 'inset' ? 'up' : 'down'"
+        class="text-shadow" (click)="borderService.borderStyle = 'inset'">
         inset
       </div>
-      <div
-        class="text-shadow"
-        (click)="borderService.borderStyle = 'outset'"
-        [ngClass]="borderService.borderStyle == 'outset' ? 'up' : 'down'"
-      >
+      <div [ngClass]="borderService.borderStyle == 'outset' ? 'up' : 'down'"
+        class="text-shadow" (click)="borderService.borderStyle = 'outset'">
         outset
       </div>
     </div>
 
     <div class="code">
-      <div class="p">
-        <p class="text-shadow" id="border-code"></p>
-      </div>
+      <div class="p"><p class="text-shadow" id="border-code"></p></div>
 
       <button
         class="copy down"
         (click)="
-          copyService.copy([
-            this.borderService.codeBorder,
-            this.borderService.codeBorderRadius
-          ]);
-          copyService.copyAnimation('border-copied')
-        "
-      >
+          copyService.copy([this.borderService.codeBorder, this.borderService.codeBorderRadius]);
+          copyService.copyAnimation('border-copied')">
         <fa-icon class="icon-shadow" [icon]="['far', 'copy']"></fa-icon>
         <span class="copied up" id="border-copied">
-          <fa-icon
-            class="icon-shadow"
-            [icon]="['fas', 'check-circle']"
-          ></fa-icon>
+          <fa-icon class="icon-shadow" [icon]="['fas', 'check-circle']"></fa-icon>
         </span>
       </button>
     </div>
@@ -195,14 +113,8 @@
   </div>
   <div class="border-width">
     <div class="div-slider">
-      <input
-        type="range"
-        [(ngModel)]="borderService.borderWidth"
-        min="0"
-        max="100"
-        class="slider"
-        id="borderWidth"
-      />
+      <input type="range" [(ngModel)]="borderService.borderWidth"
+        min="0" max="100" class="slider" id="borderWidth"/>
     </div>
   </div>
 </div>

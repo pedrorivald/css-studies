@@ -119,7 +119,7 @@ export class BorderImageService {
   }
 
   setCodeCopyRepeating() {
-    this.code = `repeating-linear-gradient(${this.gradientAngle}deg, ${this.ctrlColors[0].color}, ${this.ctrlColors[1].color}, ${this.ctrlColors[2].color} ${this.linearRepeating}px) ${this.slice}% / ${this.width}% / 0 ${this.repeat}`;
+    this.code = `border-image: repeating-linear-gradient(${this.gradientAngle}deg, ${this.ctrlColors[0].color}, ${this.ctrlColors[1].color}, ${this.ctrlColors[2].color} ${this.linearRepeating}px) ${this.slice}% / ${this.width}% / 0 ${this.repeat};`;
   }
 
   setCodeHTMLRepeating() {

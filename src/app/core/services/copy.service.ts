@@ -1,3 +1,4 @@
+import { DomService } from './dom.service';
 import { Injectable } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
 
@@ -6,19 +7,15 @@ import { ClipboardService } from 'ngx-clipboard';
 })
 export class CopyService {
 
-  constructor(private clipboardService: ClipboardService) { }
+  constructor(private clipboardService: ClipboardService, private dom: DomService) { }
 
   copy([text1 = '', text2 = '']) {
-    this.clipboardService.copy(`
-    ${text1}
-    ${text2}
-    `);
+    text1 != '' && text2 != '' ? this.clipboardService.copy(`${text1}
+    ${text2}`) : this.clipboardService.copy(`${text1}`);
   }
 
   copyAnimation(id: string) {
-    document.getElementById(id).style.opacity = '1';
-    setTimeout(() => {
-      document.getElementById(id).style.opacity = '0';
-    }, 1500);
+    this.dom.getStyle(id).opacity = '1';
+    setTimeout(() => { this.dom.getStyle(id).opacity = '0'; }, 1500);
   }
 }
